@@ -204,7 +204,7 @@ def get_lig_pckt(in_path,out_path_prefix,pdbpath,ligpath,ang_cut = 100.,dist_cut
         print ('%s %10d %10d %10d'%(in_path,0,0,ligand_n_heavy))
     else:
         #deal with metal
-        is_added = [False for i in range(len(water))]
+        is_added = False
         if len(metal) >=1:
             dist = cdist(water,metal)
             n_interact_wat = 0
@@ -213,9 +213,9 @@ def get_lig_pckt(in_path,out_path_prefix,pdbpath,ligpath,ang_cut = 100.,dist_cut
             for i,w in enumerate(dist): #i: index of water
                 for j in range(len(w)):
                     if w[j] < dist_cut:
-                        #tp = ds_list.index('Met')
-                        #water_out[tp].write(water_lines[i])
-                        is_added[i] = True
+                        tp = ds_list.index('Met')
+                        water_out[tp].write(water_lines[i])
+                        is_added = True
                         break
 
         if len(ligand) >=1:
@@ -228,18 +228,17 @@ def get_lig_pckt(in_path,out_path_prefix,pdbpath,ligpath,ang_cut = 100.,dist_cut
                     if w[j] < dist_cut:
                         tp = ligand_types[j]
                         #18
-                        #if tp != -1:
-                        #    water_out[tp].write(water_lines[i])
-                        is_added[i] = True                
+                        if tp != -1:
+                            water_out[tp].write(water_lines[i])
+                        is_added = True
                         break
-                        
-        for i in range(len(water)):
-            if is_added[i]:
-                water_out[-1].write(water_lines[i])   
-            
+        if is_added:
+            water_out[-1].write(water_lines[i])
+
         for i in range(len(ds_list)):
             water_out[i].close()
         del(water_out)
+
 
 
 
@@ -281,7 +280,7 @@ def map_water(refw, modw, n_pred=[]):
                 pair.append(MAX_DIST)
             else:
                 k = np.unravel_index(np.argmin(dist), dist.shape) #k: index of minimum dist from dist[:n]
-                pair.append(dist[k])
+                pair.append(min(float(dist[k]), MAX_DIST))
                 dist = np.delete(dist, k[0], 0)
                 dist = np.delete(dist, k[1], 1)
         pair_s.append(pair)
@@ -380,7 +379,10 @@ def run(env):
     if cutv_mode not in ['res','ncryst','score']:
         raise ValueError
     
+
+    
     nowater = [] 
+    #excluded =['3nik','4fxq','4riu','6g14']
     excluded = []
     logf = open(log_path,'w')
 
@@ -406,11 +408,15 @@ def run(env):
     logf.write('\n')
     for id0_ind, id0 in enumerate(idxs):
 
+        #print (id0)
+        #cryst_path ='vec_result/%s/%s/%s_cov.pdb'%(tt,ans_dir,id0)
+        #cryst_path ='pdb/%s/%s.pdb'%(ans_dir,id0)
         if cutv_mode == 'res':
             ires = dict_ires[id0]
         else:
             ires = -1
-        cryst_path = ans_matrix[id0_ind]   
+        cryst_path = ans_matrix[id0_ind]
+        #debug - 210204    
         if id0 in excluded:
             continue
         cryst,score_cryst =  read_pdb(cryst_path,cutoff_max=40.0) #list of vectors
@@ -419,6 +425,7 @@ def run(env):
             if id0 not in excluded:
                 excluded.append(id0)
             nowater.append('%s_%s'%(tt,id0) )
+            #print(tt,id0, 'crystal - no water near ligand')
             continue
         n_trg += 1.0
 
@@ -450,7 +457,7 @@ def run(env):
             if n_pred[i] == 0:
                 rmsd = MAX_DIST
             else:
-                rmsd   = np.sqrt(rmsd_matrix[i]/float(n_pred[i])) #same with n_predhit
+                rmsd   = np.sqrt(rmsd_matrix[i]/float(n_cryst)) #same with n_predhit
             rmsd_sum[i] += rmsd
 
             if cutv_mode == 'res':
@@ -509,9 +516,11 @@ def main(start, num):
     run_range = range(start,start+num)
     n_dl = 1
     cutoff_list = [0.5,1.0,1.5,2.0]
+    #testidxs   = get_idxs(fpath='./pdbbind_test.txt')
+    #testidxs   = get_idxs(fpath='./pdbbind_clean.txt')
     testidxs   = get_idxs(fpath='./pdbbind_exclude30.txt')    
     
-    cutv_list  = [0.5*i for i in range(1,51)]
+    cutv_list  = [i for i in range(1,51)]
     cutv_mode  = "ncryst" 
     
     pdbbind_dir = 'ref'    

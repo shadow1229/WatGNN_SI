@@ -103,7 +103,7 @@ def map_water(refw, modw, n_pred=[]):
             else:
                 #assign aribitary big distance if n_pred < n_ref
                 k = np.unravel_index(np.argmin(dist), dist.shape) #k: index of minimum dist from dist[:n]
-                pair.append(dist[k])
+                pair.append(min(float(dist[k]), MAX_DIST))
                 dist = np.delete(dist, k[0], 0)
                 dist = np.delete(dist, k[1], 1)
         #print(len(pair))

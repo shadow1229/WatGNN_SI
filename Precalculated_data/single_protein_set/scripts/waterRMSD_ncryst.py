@@ -5,7 +5,7 @@ import copy
 import numpy as np
 from scipy.spatial.distance import cdist
 #from Galaxy.utils.supPDB import ls_rmsd
-
+MAX_DIST = 10.0
 def read_pdb(pdb_fn):
     protein = []
     water = []
@@ -44,11 +44,14 @@ def map_water(refw, modw, n_pred=[]):
         pair = []
         #print('n_water',n_water)
         for i in range(n_water):
-            #assign aribitary big distance if n_pred < n_ref
-            k = np.unravel_index(np.argmin(dist), dist.shape) #k: index of minimum dist from dist[:n]
-            pair.append(dist[k])
-            dist = np.delete(dist, k[0], 0)
-            dist = np.delete(dist, k[1], 1)
+            if dist.shape[0] == 0:
+                pair.append(MAX_DIST)
+            else:
+                #assign aribitary big distance if n_pred < n_ref
+                k = np.unravel_index(np.argmin(dist), dist.shape) #k: index of minimum dist from dist[:n]
+                pair.append(min(float(dist[k]), MAX_DIST))
+                dist = np.delete(dist, k[0], 0)
+                dist = np.delete(dist, k[1], 1)
         #print(len(pair))
         pair_s.append(pair)
     return np.array(pair_s)
