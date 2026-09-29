@@ -1,0 +1,53 @@
+# 1x8q_A
+# Protein CA rmsd=  0.000
+#  N   Nprd scorecut |   RMSD    Ave    Med   TP<0.5  TP<1.0  TP<1.5
+    82     14  0.500 |  9.272  8.780 10.000       7      8      8   0.383
+# Protein CA rmsd=  0.000
+#  N   Nprd scorecut |   RMSD    Ave    Med   TP<0.5  TP<1.0  TP<1.5
+    82     21  0.450 |  8.864  8.142 10.000      10     12     12   0.401
+# Protein CA rmsd=  0.000
+#  N   Nprd scorecut |   RMSD    Ave    Med   TP<0.5  TP<1.0  TP<1.5
+    82     30  0.400 |  8.313  7.332 10.000      13     16     16   0.408
+# Protein CA rmsd=  0.000
+#  N   Nprd scorecut |   RMSD    Ave    Med   TP<0.5  TP<1.0  TP<1.5
+    82     34  0.350 |  8.102  7.035 10.000      14     17     17   0.480
+# Protein CA rmsd=  0.000
+#  N   Nprd scorecut |   RMSD    Ave    Med   TP<0.5  TP<1.0  TP<1.5
+    82     49  0.300 |  7.504  6.305  8.350      16     20     20   0.527
+# Protein CA rmsd=  0.000
+#  N   Nprd scorecut |   RMSD    Ave    Med   TP<0.5  TP<1.0  TP<1.5
+    82     61  0.250 |  6.688  5.281  4.838      20     24     25   0.530
+# Protein CA rmsd=  0.000
+#  N   Nprd scorecut |   RMSD    Ave    Med   TP<0.5  TP<1.0  TP<1.5
+    82     83  0.200 |  5.627  4.124  2.778      21     31     33   0.603
+# Protein CA rmsd=  0.000
+#  N   Nprd scorecut |   RMSD    Ave    Med   TP<0.5  TP<1.0  TP<1.5
+    82    107  0.150 |  4.288  2.894  0.981      25     41     44   0.593
+# Protein CA rmsd=  0.000
+#  N   Nprd scorecut |   RMSD    Ave    Med   TP<0.5  TP<1.0  TP<1.5
+    82    142  0.100 |  2.771  1.771  0.853      25     48     53   0.646
+# Protein CA rmsd=  0.000
+#  N   Nprd scorecut |   RMSD    Ave    Med   TP<0.5  TP<1.0  TP<1.5
+    82    158  0.090 |  2.466  1.527  0.719      27     53     58   0.647
+# Protein CA rmsd=  0.000
+#  N   Nprd scorecut |   RMSD    Ave    Med   TP<0.5  TP<1.0  TP<1.5
+    82    168  0.080 |  2.185  1.360  0.719      29     53     59   0.664
+# Protein CA rmsd=  0.000
+#  N   Nprd scorecut |   RMSD    Ave    Med   TP<0.5  TP<1.0  TP<1.5
+    82    181  0.070 |  1.731  1.167  0.717      31     54     61   0.660
+# Protein CA rmsd=  0.000
+#  N   Nprd scorecut |   RMSD    Ave    Med   TP<0.5  TP<1.0  TP<1.5
+    82    202  0.060 |  1.591  1.108  0.717      31     55     62   0.685
+# Protein CA rmsd=  0.000
+#  N   Nprd scorecut |   RMSD    Ave    Med   TP<0.5  TP<1.0  TP<1.5
+    82    225  0.050 |  1.435  1.031  0.717      32     58     64   0.665
+# Protein CA rmsd=  0.000
+#  N   Nprd scorecut |   RMSD    Ave    Med   TP<0.5  TP<1.0  TP<1.5
+    82    253  0.040 |  1.249  0.949  0.717      33     58     66   0.675
+# Protein CA rmsd=  0.000
+#  N   Nprd scorecut |   RMSD    Ave    Med   TP<0.5  TP<1.0  TP<1.5
+    82    291  0.030 |  1.165  0.897  0.717      33     59     69   0.700
+# Protein CA rmsd=  0.000
+#  N   Nprd scorecut |   RMSD    Ave    Med   TP<0.5  TP<1.0  TP<1.5
+    82    345  0.020 |  1.035  0.834  0.717      33     60     72   0.724
+#
