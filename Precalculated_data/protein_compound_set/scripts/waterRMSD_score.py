@@ -117,6 +117,8 @@ def run(ref_fn, mod_fn, verbose=False, n_pred=[],label=None):
     #
     if label == 'foldx':
         cuts = [0.0 for i in range(21)]
+    elif label == 'WarPP':
+        cuts = [-1.0 for i in range(21)]
     elif label == 'rism':
         cuts = [(16.0 - i*1) for i in range(19)]
     elif label == 'wkgb':
@@ -125,6 +127,8 @@ def run(ref_fn, mod_fn, verbose=False, n_pred=[],label=None):
         cuts = [(45.0 - i*2.5) for i in range(19)]
     elif label == 'gnn':
         cuts = [(95.0 - i*5) for i in range(20)]
+    elif label == 'hydraprot':
+        cuts = [(0.50 - i*0.025) for i in range(20)]
 
         
     
@@ -134,7 +138,14 @@ def run(ref_fn, mod_fn, verbose=False, n_pred=[],label=None):
     #
     n_wat = len(refw)
     #print(refw.shape)
-    
+    if len(modw) == 0:
+
+        sys.stdout.write("# Protein CA rmsd= %6.3f\n"%0.0)
+        sys.stdout.write("#  N   Nprd scorecut |   RMSD    Ave    Med   TP<0.5  TP<1.0  TP<1.5\n")
+        for k,cut in enumerate(cuts):
+            sys.stdout.write("%6d %6d %6.3f | %6.3f %6.3f %6.3f  %6d %6d %6d  %6.3f\n"%\
+                    (n_wat, 0, cut, 10.0, 10.0, 10.0, 0, 0, 0, 10.0))
+        return [0], [10.0], [10.0], [10.0], [0], [0], [10.0]
     n_pred = get_npred_score(cuts,mod_scores)
     
     #if len(n_pred) == 0:
@@ -148,10 +159,12 @@ def run(ref_fn, mod_fn, verbose=False, n_pred=[],label=None):
     medd = np.median(dist, axis=1)
     #
 
-    lt_15= np.where(dist<1.5)[0]  
-    lt_10= np.where(dist<1.0)[0]  
+    lt_15= np.where(dist<1.5)[0]  #check
+    lt_10= np.where(dist<1.0)[0]  #check
     lt_05= np.where(dist<0.5)[0]
-
+    #frac_15 = np.array([len(np.where(lt_15==k)[0])/float(dist.shape[1]) for k in range(dist.shape[0])])
+    #frac_10 = np.array([len(np.where(lt_10==k)[0])/float(dist.shape[1]) for k in range(dist.shape[0])])
+    #frac_05 = np.array([len(np.where(lt_05==k)[0])/float(dist.shape[1]) for k in range(dist.shape[0])])
     TP_15 = np.array([len(np.where(lt_15==k)[0]) for k in range(dist.shape[0])])
     TP_10 = np.array([len(np.where(lt_10==k)[0]) for k in range(dist.shape[0])])
     TP_05 = np.array([len(np.where(lt_05==k)[0]) for k in range(dist.shape[0])])

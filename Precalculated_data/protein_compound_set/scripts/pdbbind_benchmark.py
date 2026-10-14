@@ -524,7 +524,7 @@ def main(start, num):
     cutv_mode  = "ncryst" 
     
     pdbbind_dir = 'ref'    
-    prefixs = ['WatGNN','GalaxyWater-CNN','3D-RISM']
+    prefixs = ['WatGNN','GalaxyWater-CNN','3D-RISM','HydraProt','WarPP']
     ds_list = ['all']
     
     for pref_i, prefix in enumerate(prefixs):
@@ -535,6 +535,11 @@ def main(start, num):
         prd_dir = '%s'%prefixs[pref_i]
         if prefix == 'WatGNN':    
             prd_test  = [ './%s/%s_wat_lig_all.pdb'%(prd_dir,id0)  for id0 in testidxs ]
+        elif prefix == 'WarPP':
+            cutv_list  = [50]    
+            prd_test  = [ './%s/%s_pred.pdb'%(prd_dir,id0)  for id0 in testidxs ]
+        elif prefix == 'HydraProt':    
+            prd_test  = [ './%s/%s_complex_waters.pdb'%(prd_dir,id0)  for id0 in testidxs ]
         else:
             prd_test  = [ './%s/%s.pdb'%(prd_dir,id0)  for id0 in testidxs ]            
         ans_test  = ['./%s/%s_water.pdb'%(pdbbind_dir,id0) for id0 in testidxs]

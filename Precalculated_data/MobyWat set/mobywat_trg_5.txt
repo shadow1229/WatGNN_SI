@@ -1,0 +1,6 @@
+# 5 targets having <30% sequence identity with WatGNN training set and used to the analysis
+1JYR
+2O4K
+3QGJ
+3QL9
+3RO3

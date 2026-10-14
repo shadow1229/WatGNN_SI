@@ -1,0 +1,35 @@
+REMARK Prediction list (ID-all-inclusive)
+REMARK B-factor column holds calculated mobility values.
+REMARK First frame #             :        0
+REMARK Last frame #              :     1000
+REMARK Distance tolerance (A)    :    3.500
+REMARK Prediction tolerance (A)  :    2.500
+REMARK Clustering tolerance (A)  :    1.000
+HETATM    1 OW   WAT     1       5.614  20.567  16.205        0.00
+HETATM    2 OW   WAT     2      13.933  18.581  22.221        9.70
+HETATM    3 OW   WAT     3       3.767  22.436  13.745       67.46
+HETATM    4 OW   WAT     4       4.777  17.720  28.078       70.60
+HETATM    5 OW   WAT     5       7.239  15.725  27.854       86.72
+HETATM    6 OW   WAT     6      12.824  17.547  25.624       87.46
+HETATM    7 OW   WAT     7      -0.707  17.281  27.651       92.69
+HETATM    8 OW   WAT     8       9.613  13.586  28.521       94.78
+HETATM    9 OW   WAT     9       6.584  24.599  27.419       95.97
+HETATM   10 OW   WAT    10       3.041  15.163  28.695       97.46
+HETATM   11 OW   WAT    11       6.242  24.584  16.405       98.36
+HETATM   12 OW   WAT    12       0.457  15.096  28.572       98.36
+HETATM   13 OW   WAT    13      10.059  25.988  20.942       98.66
+HETATM   14 OW   WAT    14       2.531  20.577  32.034       98.81
+HETATM   15 OW   WAT    15      12.669  15.269  27.101       98.81
+HETATM   16 OW   WAT    16       9.363  25.103  24.116       99.10
+HETATM   17 OW   WAT    17      -1.619  19.779  32.659       99.10
+HETATM   18 OW   WAT    18       4.275  25.688  14.203       99.55
+HETATM   19 OW   WAT    19      -2.108  14.895  29.058       99.55
+HETATM   20 OW   WAT    20      -3.155  17.635  28.843       99.55
+HETATM   21 OW   WAT    21      12.393  21.820  18.463       99.55
+HETATM   22 OW   WAT    22       3.098  25.135  30.588       99.55
+HETATM   23 OW   WAT    23      14.870  16.830  24.230      100.00
+HETATM   24 OW   WAT    24      15.460  20.270  19.460      100.00
+HETATM   25 OW   WAT    25      10.300  24.320  18.610      100.00
+HETATM   26 OW   WAT    26      -4.500  16.380  31.720      100.00
+HETATM   27 OW   WAT    27       1.440  23.440  31.760      100.00
+END

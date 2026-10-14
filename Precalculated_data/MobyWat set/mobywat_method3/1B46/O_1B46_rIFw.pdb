@@ -1,0 +1,10 @@
+REMARK PDB List of reference interface water OW atoms 
+ATOM   4257 OW   WAT   552       3.307  16.707   8.143     1 22.12
+ATOM   4279 OW   WAT   574      -4.386  19.289  16.331     2 24.74
+ATOM   4305 OW   WAT   600       3.747  12.749  11.609     3 27.38
+ATOM   4331 OW   WAT   626       8.441  12.896   9.496     4 29.60
+ATOM   4346 OW   WAT   641       8.448  18.883  11.085     5 30.88
+ATOM   4348 OW   WAT   643      -1.779  21.321  12.630     6 31.01
+ATOM   4608 OW   WAT     4      -4.149  22.279  15.202     7 19.44
+ATOM   4609 OW   WAT     5       1.245  21.517  18.995     8 20.57
+END

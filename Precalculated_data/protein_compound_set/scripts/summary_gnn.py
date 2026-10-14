@@ -2,7 +2,7 @@ import os,sys
 ANGSTROM = "A"
 
 
-methods = [ 'WatGNN','3D-RISM','GalaxyWater-CNN']
+methods = [ 'WatGNN','3D-RISM','GalaxyWater-CNN','HydraProt','WarPP']
 
 for method in methods:
     with open('%s_test.log'%method,'r') as f:

@@ -125,6 +125,9 @@ def run(ref_fn, mod_fn, verbose=False, n_pred=[],label=None):
         cuts = [(45.0 - i*2.5) for i in range(19)]
     elif label == 'gnn':
         cuts = [(95.0 - i*5) for i in range(20)]
+    elif label == 'hydraprot':
+        cuts = [(0.50 - i*0.025) for i in range(20)]
+
 
         
     

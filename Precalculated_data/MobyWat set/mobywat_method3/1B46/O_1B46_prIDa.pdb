@@ -1,0 +1,25 @@
+REMARK Prediction list (ID-all-inclusive)
+REMARK B-factor column holds calculated mobility values.
+REMARK First frame #             :        0
+REMARK Last frame #              :     1000
+REMARK Distance tolerance (A)    :    3.500
+REMARK Prediction tolerance (A)  :    2.500
+REMARK Clustering tolerance (A)  :    1.000
+HETATM    1 OW   WAT     1       8.563  12.757   9.364        0.00
+HETATM    2 OW   WAT     2       1.111  21.534  19.021       15.50
+HETATM    3 OW   WAT     3      -4.286  21.961  14.942       22.93
+HETATM    4 OW   WAT     4      -4.549  19.132  15.952       24.50
+HETATM    5 OW   WAT     5       4.078  12.872  11.531       49.42
+HETATM    6 OW   WAT     6      -2.011  22.084  13.210       54.55
+HETATM    7 OW   WAT     7      -5.452  13.988  13.134       55.08
+HETATM    8 OW   WAT     8       7.635  18.735  10.733       58.95
+HETATM    9 OW   WAT     9      -0.529  16.194  17.758       69.74
+HETATM   10 OW   WAT    10       3.274  16.418   8.146       83.66
+HETATM   11 OW   WAT    11       3.972  13.788   8.718       85.86
+HETATM   12 OW   WAT    12       5.609  23.467  19.116       90.05
+HETATM   13 OW   WAT    13       8.587  21.874  18.170       90.47
+HETATM   14 OW   WAT    14       9.134  20.178  15.957       91.73
+HETATM   15 OW   WAT    15       4.122  20.511  20.285       91.94
+HETATM   16 OW   WAT    16       7.246  14.334   7.284       92.88
+HETATM   17 OW   WAT    17       7.180  20.720  20.140      100.00
+END

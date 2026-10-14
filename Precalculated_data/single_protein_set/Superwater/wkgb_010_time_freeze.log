@@ -1,0 +1,135 @@
+SuperWater prediction
+Config: examples/configs/predict_wkgb.yaml
+Input structures: 120
+Output directory: outputs/predictions_wkgb_010_time
+Output format: pdb
+Include protein: yes
+
+Loading models...
+Loading ESM-2 model (first run downloads ~2.5 GB; this can take a few minutes)...
+[1/120] 1byi_A... done in 5.1s, 160 waters, peak GPU 6.2 GB
+[2/120] 1c7k_A... done in 2.5s, 76 waters, peak GPU 3.9 GB
+[3/120] 1dy5_A... done in 2.3s, 90 waters, peak GPU 3.8 GB
+[4/120] 1eb6_A... done in 3.0s, 144 waters, peak GPU 4.9 GB
+[5/120] 1g66_A... done in 3.1s, 141 waters, peak GPU 5.7 GB
+[6/120] 1ga6_A... done in 7.3s, 269 waters, peak GPU 12.2 GB
+[7/120] 1gci_A... done in 4.5s, 190 waters, peak GPU 7.8 GB
+[8/120] 1i1w_A... done in 5.2s, 204 waters, peak GPU 9.1 GB
+[9/120] 1ix9_A... done in 2.9s, 179 waters, peak GPU 5.6 GB
+[10/120] 1j0p_A... done in 1.2s, 94 waters, peak GPU 3.5 GB
+[11/120] 1jfb_A... done in 8.0s, 406 waters, peak GPU 13.8 GB
+[12/120] 1k4i_A... done in 3.1s, 152 waters, peak GPU 6.0 GB
+[13/120] 1k5c_A... done in 6.3s, 289 waters, peak GPU 10.4 GB
+[14/120] 1kwf_A... done in 7.2s, 280 waters, peak GPU 11.9 GB
+[15/120] 1lkk_A... done in 1.2s, 65 waters, peak GPU 3.5 GB
+[16/120] 1m40_A... done in 5.1s, 215 waters, peak GPU 7.5 GB
+[17/120] 1mc2_A... done in 1.6s, 81 waters, peak GPU 3.7 GB
+[18/120] 1mj5_A... done in 5.3s, 235 waters, peak GPU 8.9 GB
+[19/120] 1mn8_A... done in 1.7s, 53 waters, peak GPU 3.3 GB
+[20/120] 1muw_A... done in 7.2s, 286 waters, peak GPU 13.1 GB
+[21/120] 1nki_A... done in 1.5s, 106 waters, peak GPU 4.0 GB
+[22/120] 1nwz_A... done in 1.5s, 64 waters, peak GPU 3.8 GB
+[23/120] 1o7j_A... done in 5.7s, 233 waters, peak GPU 10.1 GB
+[24/120] 1p1x_A... done in 3.9s, 207 waters, peak GPU 7.1 GB
+[25/120] 1rtq_A... done in 4.9s, 187 waters, peak GPU 8.6 GB
+[26/120] 1tqg_A... done in 1.2s, 55 waters, peak GPU 3.5 GB
+[27/120] 1tt8_A... done in 2.1s, 102 waters, peak GPU 4.6 GB
+[28/120] 1ufy_A... done in 1.4s, 68 waters, peak GPU 3.7 GB
+[29/120] 1unq_A... done in 1.4s, 68 waters, peak GPU 3.7 GB
+[30/120] 1vyr_A... done in 7.0s, 345 waters, peak GPU 11.9 GB
+[31/120] 1x8q_A... done in 2.5s, 142 waters, peak GPU 5.1 GB
+[32/120] 2a6z_A... done in 3.5s, 184 waters, peak GPU 6.2 GB
+[33/120] 2bf6_A... done in 9.7s, 349 waters, peak GPU 16.6 GB
+[34/120] 2cws_A... done in 3.6s, 170 waters, peak GPU 6.3 GB
+[35/120] 2ddx_A... done in 5.9s, 288 waters, peak GPU 10.0 GB
+[36/120] 2f01_A... done in 1.6s, 69 waters, peak GPU 3.7 GB
+[37/120] 2fvy_A... done in 5.5s, 241 waters, peak GPU 9.2 GB
+[38/120] 2fwh_A... done in 1.4s, 92 waters, peak GPU 3.7 GB
+[39/120] 2gkg_A... done in 1.5s, 92 waters, peak GPU 3.7 GB
+[40/120] 2gud_A... done in 1.4s, 75 waters, peak GPU 3.7 GB
+[41/120] 2h5c_A... done in 2.9s, 166 waters, peak GPU 5.4 GB
+[42/120] 2jfr_A... done in 4.7s, 186 waters, peak GPU 6.5 GB
+[43/120] 2jhf_A... done in 7.2s, 245 waters, peak GPU 12.4 GB
+[44/120] 2ov0_A... done in 1.3s, 79 waters, peak GPU 3.5 GB
+[45/120] 2pnd_A... done in 1.4s, 87 waters, peak GPU 3.7 GB
+[46/120] 2pvb_A... done in 1.3s, 87 waters, peak GPU 3.5 GB
+[47/120] 2r31_A... done in 3.3s, 194 waters, peak GPU 6.6 GB
+[48/120] 2rbk_A... done in 4.1s, 216 waters, peak GPU 7.5 GB
+[49/120] 2v1m_A... done in 2.2s, 120 waters, peak GPU 4.6 GB
+[50/120] 2vb1_A... done in 1.7s, 92 waters, peak GPU 3.9 GB
+[51/120] 2vha_A... done in 4.5s, 216 waters, peak GPU 8.0 GB
+[52/120] 2vxn_A... done in 3.9s, 185 waters, peak GPU 7.0 GB
+[53/120] 2xjp_A... done in 4.0s, 216 waters, peak GPU 7.3 GB
+[54/120] 2xod_A... done in 1.5s, 80 waters, peak GPU 3.7 GB
+[55/120] 2xom_A... done in 1.8s, 104 waters, peak GPU 4.2 GB
+[56/120] 2xu3_A... done in 3.5s, 149 waters, peak GPU 6.1 GB
+[57/120] 2y78_A... done in 1.5s, 106 waters, peak GPU 3.7 GB
+[58/120] 3agn_A... done in 1.4s, 87 waters, peak GPU 3.6 GB
+[59/120] 3aks_A... done in 2.8s, 150 waters, peak GPU 5.2 GB
+[60/120] 3bwh_A... done in 4.1s, 178 waters, peak GPU 6.9 GB
+[61/120] 3cnj_A... done in 12.2s, 372 waters, peak GPU 20.0 GB
+[62/120] 3d1p_A... done in 1.5s, 106 waters, peak GPU 3.7 GB
+[63/120] 3dha_A... done in 4.0s, 174 waters, peak GPU 7.2 GB
+[64/120] 3dk9_A... done in 9.8s, 391 waters, peak GPU 17.5 GB
+[65/120] 3e4g_A... done in 2.3s, 123 waters, peak GPU 4.9 GB
+[66/120] 3ea6_A... done in 3.1s, 167 waters, peak GPU 5.9 GB
+[67/120] 3eo6_A... done in 1.3s, 81 waters, peak GPU 3.5 GB
+[68/120] 3f1l_A... done in 4.3s, 169 waters, peak GPU 6.9 GB
+[69/120] 3fym_A... done in 1.0s, 44 waters, peak GPU 3.2 GB
+[70/120] 3g46_A... done in 1.8s, 89 waters, peak GPU 4.2 GB
+[71/120] 3ip0_A... done in 2.0s, 126 waters, peak GPU 4.5 GB
+[72/120] 3jyo_A... done in 4.7s, 213 waters, peak GPU 8.2 GB
+[73/120] 3kff_A... done in 2.0s, 118 waters, peak GPU 4.3 GB
+[74/120] 3ks3_A... done in 4.1s, 268 waters, peak GPU 7.3 GB
+[75/120] 3l8w_A... done in 4.6s, 208 waters, peak GPU 8.7 GB
+[76/120] 3m5q_A... done in 7.0s, 301 waters, peak GPU 11.6 GB
+[77/120] 3noq_A... done in 3.5s, 143 waters, peak GPU 6.3 GB
+[78/120] 3o4p_A... done in 5.6s, 217 waters, peak GPU 9.6 GB
+[79/120] 3ql9_A... done in 1.5s, 105 waters, peak GPU 3.8 GB
+[80/120] 3qpa_A... done in 2.9s, 150 waters, peak GPU 5.4 GB
+[81/120] 3qr7_A... done in 1.1s, 35 waters, peak GPU 3.6 GB
+[82/120] 3rwn_A... done in 1.9s, 136 waters, peak GPU 4.4 GB
+[83/120] 3s6e_A... done in 1.4s, 87 waters, peak GPU 3.6 GB
+[84/120] 3soj_A... done in 1.4s, 75 waters, peak GPU 3.6 GB
+[85/120] 3ui4_A... done in 1.2s, 65 waters, peak GPU 3.4 GB
+[86/120] 3vii_A... done in 10.5s, 372 waters, peak GPU 18.2 GB
+[87/120] 3vla_A... done in 8.5s, 343 waters, peak GPU 14.6 GB
+[88/120] 3vn3_A... done in 3.3s, 195 waters, peak GPU 6.2 GB
+[89/120] 3vor_A... done in 2.8s, 144 waters, peak GPU 5.0 GB
+[90/120] 3w5h_A... done in 4.4s, 220 waters, peak GPU 7.9 GB
+[91/120] 3wdn_A... done in 1.5s, 103 waters, peak GPU 3.8 GB
+[92/120] 3wgx_A... done in 1.3s, 78 waters, peak GPU 3.5 GB
+[93/120] 3zsj_A... done in 1.7s, 137 waters, peak GPU 4.0 GB
+[94/120] 3zuc_A... done in 2.0s, 136 waters, peak GPU 4.3 GB
+[95/120] 4a02_A... done in 2.2s, 155 waters, peak GPU 4.6 GB
+[96/120] 4a7u_A... done in 2.0s, 102 waters, peak GPU 4.3 GB
+[97/120] 4acj_A... done in 2.5s, 139 waters, peak GPU 4.7 GB
+[98/120] 4ayo_A... done in 9.6s, 321 waters, peak GPU 15.8 GB
+[99/120] 4bj0_A... done in 2.2s, 151 waters, peak GPU 4.6 GB
+[100/120] 4ce8_A... done in 1.3s, 87 waters, peak GPU 3.6 GB
+[101/120] 4e3y_A... done in 3.7s, 204 waters, peak GPU 6.7 GB
+[102/120] 4egu_A... done in 1.4s, 85 waters, peak GPU 3.7 GB
+[103/120] 4g9s_A... done in 2.6s, 113 waters, peak GPU 5.1 GB
+[104/120] 4g9s_B... done in 1.6s, 96 waters, peak GPU 3.6 GB
+[105/120] 4ga2_A... done in 1.7s, 97 waters, peak GPU 4.2 GB
+[106/120] 4gnr_A... done in 6.5s, 290 waters, peak GPU 11.1 GB
+[107/120] 4hno_A... done in 4.8s, 200 waters, peak GPU 8.4 GB
+[108/120] 4iau_A... done in 2.1s, 148 waters, peak GPU 4.5 GB
+[109/120] 4kqp_A... done in 3.4s, 209 waters, peak GPU 6.4 GB
+[110/120] 4mtu_A... done in 1.7s, 71 waters, peak GPU 4.1 GB
+[111/120] 4n1i_A... done in 5.5s, 250 waters, peak GPU 9.5 GB
+[112/120] 4nsv_A... done in 4.3s, 225 waters, peak GPU 7.6 GB
+[113/120] 4o6u_A... done in 2.5s, 133 waters, peak GPU 5.0 GB
+[114/120] 4psy_A... done in 2.6s, 120 waters, peak GPU 4.5 GB
+[115/120] 4q4g_X... done in 3.2s, 158 waters, peak GPU 5.7 GB
+[116/120] 4tkb_A... done in 2.1s, 123 waters, peak GPU 3.9 GB
+[117/120] 4u9h_S... done in 4.4s, 195 waters, peak GPU 7.6 GB
+[118/120] 4unu_A... done in 1.3s, 84 waters, peak GPU 3.5 GB
+[119/120] 4wee_A... done in 1.6s, 91 waters, peak GPU 4.0 GB
+[120/120] 7a3h_A... done in 5.1s, 255 waters, peak GPU 9.0 GB
+
+Summary:
+  succeeded: 1byi_A, 1c7k_A, 1dy5_A, 1eb6_A, 1g66_A, 1ga6_A, 1gci_A, 1i1w_A, 1ix9_A, 1j0p_A, 1jfb_A, 1k4i_A, 1k5c_A, 1kwf_A, 1lkk_A, 1m40_A, 1mc2_A, 1mj5_A, 1mn8_A, 1muw_A, 1nki_A, 1nwz_A, 1o7j_A, 1p1x_A, 1rtq_A, 1tqg_A, 1tt8_A, 1ufy_A, 1unq_A, 1vyr_A, 1x8q_A, 2a6z_A, 2bf6_A, 2cws_A, 2ddx_A, 2f01_A, 2fvy_A, 2fwh_A, 2gkg_A, 2gud_A, 2h5c_A, 2jfr_A, 2jhf_A, 2ov0_A, 2pnd_A, 2pvb_A, 2r31_A, 2rbk_A, 2v1m_A, 2vb1_A, 2vha_A, 2vxn_A, 2xjp_A, 2xod_A, 2xom_A, 2xu3_A, 2y78_A, 3agn_A, 3aks_A, 3bwh_A, 3cnj_A, 3d1p_A, 3dha_A, 3dk9_A, 3e4g_A, 3ea6_A, 3eo6_A, 3f1l_A, 3fym_A, 3g46_A, 3ip0_A, 3jyo_A, 3kff_A, 3ks3_A, 3l8w_A, 3m5q_A, 3noq_A, 3o4p_A, 3ql9_A, 3qpa_A, 3qr7_A, 3rwn_A, 3s6e_A, 3soj_A, 3ui4_A, 3vii_A, 3vla_A, 3vn3_A, 3vor_A, 3w5h_A, 3wdn_A, 3wgx_A, 3zsj_A, 3zuc_A, 4a02_A, 4a7u_A, 4acj_A, 4ayo_A, 4bj0_A, 4ce8_A, 4e3y_A, 4egu_A, 4g9s_A, 4g9s_B, 4ga2_A, 4gnr_A, 4hno_A, 4iau_A, 4kqp_A, 4mtu_A, 4n1i_A, 4nsv_A, 4o6u_A, 4psy_A, 4q4g_X, 4tkb_A, 4u9h_S, 4unu_A, 4wee_A, 7a3h_A
+  skipped: none
+  failed: none
+  outputs: outputs/predictions_wkgb_010_time

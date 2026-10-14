@@ -22,19 +22,29 @@ s_dl = 0
 n_dl = 1
 
 labels = ['Accuracy','Coverage','RMSD']
+#tts = ['train','test']
 tts = ['test']
 tts2 = {'train' :'$\mathrm{protein-compound}$ $\mathrm{comparison}$ $\mathrm{set}$ ($\mathrm{171}$ $\mathrm{structures}$)',
          'test' :'$\mathrm{protein-compound}$ $\mathrm{comparison}$ $\mathrm{set}$ ($\mathrm{171}$ $\mathrm{structures}$)'}
 
 
-paths = ['WatGNN','GalaxyWater-CNN','3D-RISM'] 
+paths = ['WatGNN','GalaxyWater-CNN','3D-RISM','HydraProt','WarPP'] #,'lig_nofg_fullgrid_2_lig_50_all' ]
+#fullgrid_2: merge grid + change water placement method
+#original: remove score(to 0) in protein voxel -> convolution with kernel
+#fullgrid_2: convolution with kernel -> remove score(to 0) in protein voxel
+#result: fullgrid and fullgrid_2 showed very similar result
 dd    ={'WatGNN':'WatGNN', 
         'GalaxyWater-CNN':'GalaxyWater-CNN',
-        '3D-RISM':'3D-RISM'
+        '3D-RISM':'3D-RISM',
+        'WarPP':'WarPP',
+        'HydraProt':'HydraProt',
         }
 color  = ['#000000',
           '#FF0000',
+          #'#FF8800',
           '#00FF00',
+          '#00FFFF',
+          '#808080',
           '#0000FF',
           '#000000',
           '#FF00FF',
@@ -77,6 +87,7 @@ for tt in tts:
                 ax.set_xlabel(r'$N_{\mathrm{pred}}/N_{\mathrm{cryst}}$',fontproperties=prop)
                 ax.set_ylim(0.0,1.0)
                 ax.set_ylabel(r'$\mathrm{Mean}$ $\mathrm{precision ({%3.1f \AA})}$'%cut,fontproperties=prop)
+                #ax.set_ylabel(r'$\mathrm{Coverage ({%3.1 A})}$'%cut,fontproperties=prop)
                 ax.set_xticks([1.0*i for i in range(11)])
                 for i, p in enumerate(paths):
                     dat = dat_dict[p]
@@ -87,6 +98,10 @@ for tt in tts:
                 ax.set_xlim(0.0,10.0)
                 ax.set_xlabel(r'$N_{\mathrm{pred}}/N_{\mathrm{cryst}}$',fontproperties=prop)
                 ax.set_ylim(0.0,1.0)
+                #if cut == 1.0:
+                #    ax.set_ylabel(r'$\mathrm{Recall}$',fontproperties=prop)
+                #else:
+                #    ax.set_ylabel(r'$\mathrm{Recall ({%3.1f \AA})}$'%cut,fontproperties=prop)
                 ax.set_ylabel(r'$\mathrm{Mean}$ $\mathrm{recall ({%3.1f \AA})}$'%cut,fontproperties=prop)
                 ax.set_xticks([1.0*i for i in range(11)])
                 for i, p in enumerate(paths):
@@ -99,8 +114,9 @@ for tt in tts:
             elif labelid == 2: #RMSD 
                 ax.set_xlim(0.0,10.0)
                 ax.set_xlabel(r'$N_{\mathrm{pred}}/N_{\mathrm{cryst}}$',fontproperties=prop)
-                ax.set_ylim(0.0,4.0)
+                ax.set_ylim(0.0,6.0)
                 ax.set_ylabel(r'$\mathrm{RMSD ( {\AA } )}$',fontproperties=prop)
+                #ax.set_ylabel(r'$\mathrm{RMSD ( {A } )}$',fontproperties=prop)
                 ax.set_xticks([1.0*i for i in range(11)])
                 for i, p in enumerate(paths):
                     dat = dat_dict[p]
@@ -109,8 +125,10 @@ for tt in tts:
             else:
                 ax.set_xlim(0.0,1.0)
                 ax.set_xlabel(r'$\mathrm{Recall ({%3.1f \AA})}$'%cut,fontproperties=prop)
+                #ax.set_xlabel(r'$\mathrm{Coverage ({%3.1 A})}$'%cut,fontproperties=prop)
                 ax.set_ylim(0.0,1.0)
                 ax.set_ylabel(r'$\mathrm{Precision ({%3.1f \AA})}$'%cut,fontproperties=prop)
+                #ax.set_ylabel(r'$\mathrm{Accuracy ({%3.1 A})}$'%cut,fontproperties=prop)
                 ax.set_xticks([0.2*i for i in range(6)])
                 for i, p in enumerate(paths):
                     dat = dat_dict[p]

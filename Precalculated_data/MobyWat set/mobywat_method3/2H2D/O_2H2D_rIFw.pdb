@@ -1,0 +1,7 @@
+REMARK PDB List of reference interface water OW atoms 
+ATOM   2018 OW   WAT  1069       3.045  13.349  26.523     1 46.79
+ATOM   2037 OW   WAT  1088       2.642  23.218  12.771     2 22.46
+ATOM   2095 OW   WAT  1146       4.287  10.557  27.488     3 41.70
+ATOM   2121 OW   WAT   149       4.787  21.450  15.259     4 25.82
+ATOM   2129 OW   WAT   235      -3.038  21.885  32.069     5 43.69
+END

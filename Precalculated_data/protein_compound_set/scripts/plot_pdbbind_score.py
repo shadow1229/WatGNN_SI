@@ -76,10 +76,13 @@ types_dict = {'native' :'$\mathrm{protein-compound}$ $\mathrm{comparison}$ $\mat
 
 
 method_dict    ={'GalaxyWater-wKGB':'GalaxyWater-KGB','3drism':'3D-RISM','FoldX':'FoldX',
-                 'GalaxyWater-CNN':'GalaxyWater-CNN','WatGNN':'WatGNN'}
-method_list    = ['WatGNN','GalaxyWater-CNN','3drism']
+                 'GalaxyWater-CNN':'GalaxyWater-CNN','WatGNN':'WatGNN','WarPP':'WarPP','HydraProt':'HydraProt',
+}
+#method_list    = ['WatGNN','GalaxyWater-CNN','GalaxyWater-wKGB','3drism','FoldX']
+method_list    = ['WatGNN','GalaxyWater-CNN','3drism',"HydraProt",'WarPP']
 method_list_f1    = ['WatGNN']
-color  = ['#000000','#FF0000','#00FF00','#000000','#880088','#008888']
+#color  = ['#000000','#FF0000','#FF8800','#00FF00','#0000FF','#000000','#880088','#008888']
+color  = ['#000000','#FF0000','#00FF00','#00FFFF','#808080','#880088','#008888']
 plt.rc('mathtext', fontset='cm')
 #plt.rc('font', **{'family':'sans-serif','sans-serif':['Helvetica']})
 #plt.rc('text',usetex=True)
@@ -115,8 +118,10 @@ for typ in types_dict.keys():
             cut = cut_dict[label] 
             ax.set_xlim(0.0,1.0)
             ax.set_xlabel(r'$\mathrm{Mean}$ $\mathrm{recall ({%3.1f \AA})}$'%cut,fontproperties=prop)
+            #ax.set_xlabel(r'$\mathrm{Coverage ({%3.1 A})}$'%cut,fontproperties=prop)
             ax.set_ylim(0.0,1.0)
             ax.set_ylabel(r'$\mathrm{Mean}$ $\mathrm{precision ({%3.1f \AA})}$'%cut,fontproperties=prop)
+            #ax.set_ylabel(r'$\mathrm{Accuracy ({%3.1 A})}$'%cut,fontproperties=prop)
             ax.set_xticks([0.2*i for i in range(6)])
             ax.set_yticks([0.2*i for i in range(6)])
             for i, method in enumerate(method_list):
@@ -130,8 +135,10 @@ for typ in types_dict.keys():
             cut = cut_dict[label] 
             ax.set_xlim(0.0,1.0)
             ax.set_xlabel(r'$\mathrm{Score}$ $\mathrm{cutoff}$',fontproperties=prop)
+            #ax.set_xlabel(r'$\mathrm{Coverage ({%3.1 A})}$'%cut,fontproperties=prop)
             ax.set_ylim(0.0,1.0)
             ax.set_ylabel(r'$\mathrm{Mean}$ $\mathrm{F1}$ $\mathrm{Score ({%3.1f \AA}}$ $\mathrm{criterion)}$'%cut,fontproperties=prop)
+            #ax.set_ylabel(r'$\mathrm{Accuracy ({%3.1 A})}$'%cut,fontproperties=prop)
             for i, method in enumerate(method_list_f1):
                 dat = dat_dict[method]
                 xlabel, ylabel = labels_dict[label]
@@ -150,5 +157,12 @@ for typ in types_dict.keys():
                 print("%s %s"%(dat[xlabel] , dat[ylabel]))
                 ax.plot(dat[xlabel] , dat[ylabel],color=color[i] ,marker='o',label=method_dict[method])
 
+
+        #if ylabel == 'cov_10':
+        #    ax.legend(bbox_to_anchor=(1.00,0.33),fontsize=8)
+        #elif ylabel == 'cov_15':
+        #    ax.legend(bbox_to_anchor=(1.00,0.33),fontsize=8)
+        #else:
+        #    ax.legend(bbox_to_anchor=(1.00,1.0),fontsize=8)
         plt.savefig('%s.png'%(label))
         
