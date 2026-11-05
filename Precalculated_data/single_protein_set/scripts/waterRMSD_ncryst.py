@@ -71,7 +71,6 @@ def run(ref_fn, mod_fn, verbose=False, n_pred=[]):
         n_pred = [int(n_wat)*i for i in range(1,50)]
         n_pred.append(len(modw))
     #print(n_pred)
-    #print(len(modw))
     dist = map_water(refw, modw, n_pred=n_pred)
     #print dist.shape
     rmsd = np.sqrt(np.mean(dist**2, axis=1))

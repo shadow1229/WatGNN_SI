@@ -17,17 +17,6 @@ def get_npred_score(cuts,scores):
                 if score > cut:
                     result[i] = (npred+1) #because npred starts at 0
         return result
-def get_npred_score_rev(cuts,scores): #for mobywat
-    if scores[0] == None:
-        result = [len(scores) for i in range(len(cuts))]
-        return result
-    else:
-        result = [0 for i in range(len(cuts))]
-        for npred, score in enumerate(scores):
-            for i, cut in enumerate(cuts):
-                if score < cut:
-                    result[i] = (npred+1) #because npred starts at 0
-        return result
 def get_npred_ncryst(n_cryst, cutv_list, n_pred):
     result = [min(int(cutv*n_cryst) , n_pred) for cutv in cutv_list]
     return result
@@ -138,12 +127,6 @@ def run(ref_fn, mod_fn, verbose=False, n_pred=[],label=None):
         cuts = [(95.0 - i*5) for i in range(20)]
     elif label == 'hydraprot':
         cuts = [(0.50 - i*0.025) for i in range(20)]
-    elif label == 'MobyWat':
-        cuts1 = [(1+i)*5 for i in range(18)]
-        cuts2 = [(90+1+i)for i in range(10)]
-        cuts = []
-        cuts.extend(cuts1)
-        cuts.extend(cuts2)
 
 
         
@@ -154,10 +137,8 @@ def run(ref_fn, mod_fn, verbose=False, n_pred=[],label=None):
     #
     n_wat = len(refw)
     #print(refw.shape)
-    if label != 'MobyWat':
-        n_pred = get_npred_score(cuts,mod_scores)
-    else:
-        n_pred = get_npred_score_rev(cuts,mod_scores)
+    n_pred = get_npred_score(cuts,mod_scores)
+    
     #if len(n_pred) == 0:
     #    n_pred = [int(n_wat)*i for i in range(1,50)]
     #    n_pred.append(len(modw))

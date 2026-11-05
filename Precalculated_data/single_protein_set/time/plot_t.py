@@ -39,7 +39,6 @@ for i in range(1):
         
         hydraprot_x, hydraprot_y = read_dat('hydraprot_rest.dat')
         superwater_x,superwater_y = read_dat('superwater_rest.dat')
-        mobywat_x,mobywat_y = read_dat('mobywat_rest.dat')
         
         plt.rc('mathtext', fontset='cm')
         #plt.rc('font', **{'family':'sans-serif','sans-serif':['Helvetica']})
@@ -58,18 +57,17 @@ for i in range(1):
         ax.set_title(r'%s'%title,fontproperties=prop)
         
         ax.set_xlim(0.0,500.0)
-        ax.set_ylim(-2.0,5.0)
+        ax.set_ylim(-2.0,4.0)
         ax.set_xlabel(r'$\mathrm{Protein}$ $\mathrm{size}$ $\mathrm{(number}$ $\mathrm{of}$ $\mathrm{amino}$ $\mathrm{acids)}$',fontproperties=prop)
         ax.set_ylabel(r'$\mathrm{log}_{10}\mathrm{(time)}$ $\mathrm{(s)}$',fontproperties=prop)
 
         ax.scatter(gnn_x , gnn_y,color='#000000' ,marker='o',label='WatGNN')         
-        ax.scatter(superwater_x , superwater_y,color='#FF00FF' ,marker='o',label='SuperWater')
-        ax.scatter(hydraprot_x , hydraprot_y,color='#00FFFF' ,marker='o',label='HydraProt')
         ax.scatter(cnn_x , cnn_y,color='#FF0000' ,marker='o',label='GalaxyWater-CNN')
         #ax.scatter(cnn_cpu_x , cnn_cpu_y,color='#000000' ,marker='o',label='GW2_CPU') 
         #ax.scatter(wkgb_x , wkgb_y,color='#FF8800' ,marker='o',label='GW_wKGB')
         ax.scatter(rism_x , rism_y,color='#00FF00' ,marker='o',label='3D-RISM')
         ax.scatter(fold_x , fold_y,color='#0000FF' ,marker='o',label='FoldX')
-        ax.scatter(mobywat_x , mobywat_y,color='#7F00FF' ,marker='^',label='MobyWat')
-        ax.legend(bbox_to_anchor=(0.95,0.27),ncol=2,fontsize=8)
+        ax.scatter(superwater_x , superwater_y,color='#FF00FF' ,marker='o',label='SuperWater')
+        ax.scatter(hydraprot_x , hydraprot_y,color='#00FFFF' ,marker='o',label='HydraProt')
+        ax.legend(bbox_to_anchor=(0.95,0.25),ncol=2,fontsize=8)
         plt.savefig('time.png')
