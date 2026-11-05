@@ -57,8 +57,8 @@ def read_dat(fpath):
 
     return result
     
-labels = ['RMSD','acccov_05','acccov_10','acccov_15','f1_05','f1_10','f1_15']
-labels_dict = { 'RMSD': ['n','RMSD'],
+labels = ['RMSD_score','acccov_05','acccov_10','acccov_15','f1_05','f1_10','f1_15']
+labels_dict = { 'RMSD_score': ['n','RMSD'],
                 'acccov_05' : ['cov_05','acc_05'],
                 'acccov_10' : ['cov_10','acc_10'],
                 'acccov_15' : ['cov_15','acc_15'],
@@ -76,10 +76,10 @@ types_dict = {'native' :'$\mathrm{single}$ $\mathrm{protein}$ $\mathrm{compariso
 
 
 method_dict    ={'GalaxyWater-wKGB':'GalaxyWater-wKGB','3drism':'3D-RISM','FoldX':'FoldX',
-                 'GalaxyWater-CNN':'GalaxyWater-CNN','WatGNN':'WatGNN',"SuperWater":"SuperWater","HydraProt":"HydraProt"}
-method_list    = ['WatGNN','GalaxyWater-CNN','GalaxyWater-wKGB','3drism','FoldX',"SuperWater","HydraProt"]
+                 'GalaxyWater-CNN':'GalaxyWater-CNN','WatGNN':'WatGNN',"SuperWater":"SuperWater","HydraProt":"HydraProt","MobyWat":"MobyWat"}
+method_list    = ['WatGNN',"SuperWater","HydraProt",'GalaxyWater-CNN','GalaxyWater-wKGB','3drism','FoldX',"MobyWat"]
 method_list_f1    = ['WatGNN']
-color  = ['#000000','#FF0000','#FF8800','#00FF00','#0000FF','#FF00FF','#00FFFF','#000000']
+color  = ['#000000','#FF00FF','#00FFFF','#FF0000','#FF8800','#00FF00','#0000FF','#7F00FF']
 plt.rc('mathtext', fontset='cm')
 #plt.rc('font', **{'family':'sans-serif','sans-serif':['Helvetica']})
 #plt.rc('text',usetex=True)
@@ -125,7 +125,10 @@ for typ in types_dict.keys():
                 dat = dat_dict[method]
                 xlabel, ylabel = labels_dict[label]
                 ax.plot(dat[xlabel] , dat[ylabel],color=color[i] ,marker='o',label=method_dict[method])
-            ax.legend(bbox_to_anchor=(1.00,0.97),fontsize=7)
+            if label == 'acccov_15':
+                ax.legend(bbox_to_anchor=(1.00,0.97),fontsize=6, ncols=1)
+            else:
+                ax.legend(bbox_to_anchor=(1.00,0.97),fontsize=7, ncols=1)
             plt.gca().set_aspect("equal")        
         
         elif label in ['f1_05','f1_10','f1_15']:
@@ -140,7 +143,7 @@ for typ in types_dict.keys():
                 dat = dat_dict[method]
                 xlabel, ylabel = labels_dict[label]
                 ax.plot(dat[xlabel] , dat[ylabel],color=color[i] ,marker='o',label=method_dict[method])
-            ax.legend(bbox_to_anchor=(1.00,0.95),fontsize=8)
+            ax.legend(bbox_to_anchor=(1.00,0.95),fontsize=8, ncols=1)
             
 
         else:
