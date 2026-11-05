@@ -49,10 +49,10 @@ types_dict = {'native' :'$\mathrm{single}$ $\mathrm{protein}$ $\mathrm{compariso
 #        'relaxed':'$\mathrm{perturbed}$ $\mathrm{structure}$ $\mathrm{set}$'}
 
 method_dict    ={'GalaxyWater-wKGB':'GalaxyWater-wKGB','3drism':'3D-RISM','FoldX':'FoldX',
-                 'GalaxyWater-CNN':'GalaxyWater-CNN','WatGNN':'WatGNN',"SuperWater":"SuperWater","HydraProt":"HydraProt"}
-method_list    = ['WatGNN','GalaxyWater-CNN','GalaxyWater-wKGB','3drism','FoldX',"SuperWater","HydraProt"]
+                 'GalaxyWater-CNN':'GalaxyWater-CNN','WatGNN':'WatGNN',"SuperWater":"SuperWater","HydraProt":"HydraProt","MobyWat":"MobyWat"}
+method_list    = ['WatGNN',"SuperWater","HydraProt",'GalaxyWater-CNN','GalaxyWater-wKGB','3drism','FoldX',"MobyWat"]
 
-color  = ['#000000','#FF0000','#FF8800','#00FF00','#0000FF','#FF00FF','#00FFFF','#000000']
+color  = ['#000000','#FF00FF','#00FFFF','#FF0000','#FF8800','#00FF00','#0000FF','#7F00FF']
 plt.rc('mathtext', fontset='cm')
 #plt.rc('font', **{'family':'sans-serif','sans-serif':['Helvetica']})
 #plt.rc('text',usetex=True)
@@ -78,7 +78,7 @@ for typ in types_dict.keys():
         #ax = fig.add_subplot(111)
         ax = fig.add_axes([0.14,0.15,0.80,0.74])
         ax.grid(visible=True, axis='both',linestyle='dotted',color='black')
-        #ax.legend(bbox_to_anchor=(1.00,1.0))
+        ax.legend(bbox_to_anchor=(1.00,1.0))
         title = '%s $\mathrm{(91}$ $\mathrm{structures)}$'%types_dict[typ]
         ax.set_title(r'%s'%title,fontproperties=prop)
 
@@ -108,10 +108,10 @@ for typ in types_dict.keys():
 
 
         if ylabel == 'cov_10':
-            ax.legend(bbox_to_anchor=(1.00,0.6),fontsize=7)
+            ax.legend(bbox_to_anchor=(1.00,0.3),fontsize=8, ncols=2)
         elif ylabel == 'cov_15':
-            ax.legend(bbox_to_anchor=(1.00,0.6),fontsize=7)
+            ax.legend(bbox_to_anchor=(1.00,0.3),fontsize=8, ncols=2)
         else:
-            ax.legend(bbox_to_anchor=(1.00,1.0),fontsize=7)
+            ax.legend(bbox_to_anchor=(1.00,1.0),fontsize=8, ncols=2)
         plt.savefig('%s.png'%(ylabel))
         
