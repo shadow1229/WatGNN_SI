@@ -1,0 +1,11 @@
+define     = -DPOSRES -DFLEXIBLE
+integrator = cg
+emtol      = 10
+emstep     = 0.01
+nsteps     = 50000
+nstcgsteep = 1000
+cutoff-scheme = Verlet
+coulombtype = PME
+rcoulomb   = 1.1
+rvdw       = 1.1
+pbc        = xyz
